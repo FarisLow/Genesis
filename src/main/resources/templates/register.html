@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+<head>
+<meta charset="UTF-8">
+<title>Register Page</title>
+</head>
+<body>
+
+<body class="bg" style="background-image: url('https://images.unsplash.com/photo-1527602481536-72cd1fda3e5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80') ;background-position: center; background-repeat: no-repeat; background-size: cover;">
+
+
+
+		<h3>Please enter your credentials for registration</h3>
+		<hr>
+		
+		<div th:if="${flag} eq 1">
+			<p>username already taken!</p>
+		</div>
+	
+		<form method="post" action = "register">
+		<input type = "text" name = "username" placeholder = "Username" required/>
+		<input type = "password" name = "password" placeholder = "Password" required/>
+		<input type="submit" name = "Register"/>
+		</form>
+
+		<p th:if="${registerError}" th:text="${registerError}" style="color: red;"></p>
+		
+		<h2> </h2>
+		<a href= "login"> Remembered your password?</a>
+</body>
+</html>

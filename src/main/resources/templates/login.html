@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    form input {
+        margin-bottom: 10px;
+    }
+</style>
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+</head>
+<body>
+
+<body class="bg" style="background-image: url('https://images.unsplash.com/photo-1639690222445-595b0794bbd4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80') ;background-position: center; background-repeat: no-repeat; background-size: cover;">
+
+		<h3>Please Log In with  your credentials!</h3>
+		<hr>
+		<form method="post" action = "login">
+		<input type = "text" name = "username" placeholder = "Username" required/>
+		<input type = "password" name = "password" placeholder = "Password" required/>
+		<input type="submit" name = "Log In"/>
+		</form>
+		<p th:if="${loginError}" th:text="${loginError}" style="color: red;"></p>
+		<h2> </h2>
+		<a href= "register"> Click here to Register</a>
+		
+		<h2> </h2>
+		<a href= "/"> Back to Index Page</a>
+</body>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<style>
+.username {
+	font-size: 24px;
+}
+
+.userId {
+	font-size: 20px;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+</style>
+<head>
+<meta charset="UTF-8">
+<title>HomePage</title>
+</head>
+<body>
+
+	<h1>
+		Welcome, <span th:text="${user.username}"></span> !
+	</h1>
+
+
+	<label> Wallet Balance: $ <span class=userId
+		th:text="${user.wallet}"></span>
+	</label>
+
+	<h3>Input Amount to Top Up</h3>
+	<form method="post" action="topupvalue">
+		<input type="text" name="value" placeholder="Input Amount" required />
+		<input type="submit" name="topupvalue" />
+	</form>
+	<p th:if="${topUpError}" th:text="${topUpError}" style="color: red;"></p>
+
+	<hr>
+	<h2></h2>
+	<a href="/items"> Click here for Items Catalogue</a>
+	<br>
+	<a href="/home"> HomePage</a>
+	<h2></h2>
+	<a href="/logout"> Click here to logout</a>
+
+
+
+</body>
+</html>
